@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MaterialSkin.Controls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,11 +11,16 @@ using System.Windows.Forms;
 
 namespace MonsterFighterDApp
 {
-    public partial class Form1 : Form
+    public partial class AddNewMonster : MaterialForm
     {
-        public Form1()
+        public AddNewMonster()
         {
             InitializeComponent();
+        }
+
+        private void AddNewMonster_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
