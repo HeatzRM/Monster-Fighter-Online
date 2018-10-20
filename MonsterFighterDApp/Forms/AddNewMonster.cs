@@ -22,5 +22,10 @@ namespace MonsterFighterDApp
         {
 
         }
+
+        private void BtnCreateMonster_Click(object sender, EventArgs e)
+        {
+            //Insert Data into Contract
+        }
     }
 }

@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace MonsterFighterDApp.Forms
 {
-    public partial class Menu : MaterialForm
+    public partial class Arena : MaterialForm
     {
-        public Menu()
+        public Arena()
         {
             InitializeComponent();
         }

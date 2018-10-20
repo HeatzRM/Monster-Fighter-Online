@@ -1,6 +1,6 @@
 ﻿namespace MonsterFighterDApp
 {
-    partial class AddNewWeapon
+    partial class AddNewItem
     {
         /// <summary>
         /// Required designer variable.
@@ -34,10 +34,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(987, 575);
+            this.ClientSize = new System.Drawing.Size(987, 608);
             this.Name = "AddNewWeapon";
             this.Text = "AddNewWeapon";
-            this.Load += new System.EventHandler(this.AddNewWeapon_Load);
+            this.Load += new System.EventHandler(this.AddNewItem_Load);
             this.ResumeLayout(false);
 
         }

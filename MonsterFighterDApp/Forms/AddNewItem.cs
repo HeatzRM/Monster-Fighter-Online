@@ -11,14 +11,14 @@ using System.Windows.Forms;
 
 namespace MonsterFighterDApp
 {
-    public partial class AddNewWeapon : MaterialForm
+    public partial class AddNewItem : MaterialForm
     {
-        public AddNewWeapon()
+        public AddNewItem()
         {
             InitializeComponent();
         }
 
-        private void AddNewWeapon_Load(object sender, EventArgs e)
+        private void AddNewItem_Load(object sender, EventArgs e)
         {
 
         }

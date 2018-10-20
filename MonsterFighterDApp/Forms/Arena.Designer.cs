@@ -1,6 +1,6 @@
 ﻿namespace MonsterFighterDApp.Forms
 {
-    partial class Menu
+    partial class Arena
     {
         /// <summary>
         /// Required designer variable.
@@ -30,13 +30,13 @@
         {
             this.SuspendLayout();
             // 
-            // Menu
+            // Arena
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(916, 557);
-            this.Name = "Menu";
-            this.Text = "Menu";
+            this.ClientSize = new System.Drawing.Size(922, 570);
+            this.Name = "Arena";
+            this.Text = "Arena";
             this.ResumeLayout(false);
 
         }
