@@ -1,0 +1,867 @@
+[
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "Name",
+				"type": "string"
+			},
+			{
+				"name": "Health",
+				"type": "uint256"
+			},
+			{
+				"name": "DamagePerAttack",
+				"type": "uint256"
+			},
+			{
+				"name": "AttacksPerTurn",
+				"type": "uint256"
+			},
+			{
+				"name": "image",
+				"type": "string"
+			}
+		],
+		"name": "addMonster",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "Name",
+				"type": "string"
+			},
+			{
+				"name": "Damage",
+				"type": "uint256"
+			},
+			{
+				"name": "WeaponType",
+				"type": "string"
+			},
+			{
+				"name": "NumberOfAttacksOfTheWeapon",
+				"type": "uint256"
+			},
+			{
+				"name": "image",
+				"type": "string"
+			}
+		],
+		"name": "addWeapon",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_numTokens",
+				"type": "uint256"
+			}
+		],
+		"name": "buyShia",
+		"outputs": [],
+		"payable": true,
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "amount",
+				"type": "uint256"
+			}
+		],
+		"name": "payoutToken",
+		"outputs": [],
+		"payable": true,
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "Name",
+				"type": "string"
+			}
+		],
+		"name": "playerCreate",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "__numTokens",
+				"type": "uint256"
+			}
+		],
+		"name": "sellShia",
+		"outputs": [],
+		"payable": true,
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "__userAddress",
+				"type": "address"
+			},
+			{
+				"name": "Name",
+				"type": "string"
+			},
+			{
+				"name": "ArmorType",
+				"type": "string"
+			},
+			{
+				"name": "Defense",
+				"type": "uint256"
+			},
+			{
+				"name": "image",
+				"type": "string"
+			}
+		],
+		"name": "setArmsArmor",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "__userAddress",
+				"type": "address"
+			},
+			{
+				"name": "Name",
+				"type": "string"
+			},
+			{
+				"name": "ArmorType",
+				"type": "string"
+			},
+			{
+				"name": "Defense",
+				"type": "uint256"
+			},
+			{
+				"name": "image",
+				"type": "string"
+			}
+		],
+		"name": "setFootwearArmor",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "__userAddress",
+				"type": "address"
+			},
+			{
+				"name": "Name",
+				"type": "string"
+			},
+			{
+				"name": "ArmorType",
+				"type": "string"
+			},
+			{
+				"name": "Defense",
+				"type": "uint256"
+			},
+			{
+				"name": "image",
+				"type": "string"
+			}
+		],
+		"name": "setHeadArmor",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "__userAddress",
+				"type": "address"
+			},
+			{
+				"name": "Name",
+				"type": "string"
+			},
+			{
+				"name": "ArmorType",
+				"type": "string"
+			},
+			{
+				"name": "Defense",
+				"type": "uint256"
+			},
+			{
+				"name": "image",
+				"type": "string"
+			}
+		],
+		"name": "setLeggingsArmor",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_newPrice",
+				"type": "uint256"
+			}
+		],
+		"name": "setShiaPrice",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "__userAddress",
+				"type": "address"
+			},
+			{
+				"name": "Name",
+				"type": "string"
+			},
+			{
+				"name": "ArmorType",
+				"type": "string"
+			},
+			{
+				"name": "Defense",
+				"type": "uint256"
+			},
+			{
+				"name": "image",
+				"type": "string"
+			}
+		],
+		"name": "setTorsoArmor",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_to",
+				"type": "address"
+			},
+			{
+				"name": "_value",
+				"type": "uint256"
+			}
+		],
+		"name": "transfer",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"name": "initialOwnerTokens",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "__userAddress",
+				"type": "address"
+			}
+		],
+		"name": "checkIfPlayerAlreadyExists",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "getAddressOfPlayer",
+		"outputs": [
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "__userAddress",
+				"type": "address"
+			}
+		],
+		"name": "getArmsArmorData",
+		"outputs": [
+			{
+				"name": "",
+				"type": "string"
+			},
+			{
+				"name": "",
+				"type": "string"
+			},
+			{
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"name": "",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "getContractBalance",
+		"outputs": [
+			{
+				"name": "balance",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "__userAddress",
+				"type": "address"
+			}
+		],
+		"name": "getFootwearArmorData",
+		"outputs": [
+			{
+				"name": "",
+				"type": "string"
+			},
+			{
+				"name": "",
+				"type": "string"
+			},
+			{
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"name": "",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "__userAddress",
+				"type": "address"
+			}
+		],
+		"name": "getHeadArmorData",
+		"outputs": [
+			{
+				"name": "",
+				"type": "string"
+			},
+			{
+				"name": "",
+				"type": "string"
+			},
+			{
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"name": "",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "__userAddress",
+				"type": "address"
+			}
+		],
+		"name": "getLeggingsArmorData",
+		"outputs": [
+			{
+				"name": "",
+				"type": "string"
+			},
+			{
+				"name": "",
+				"type": "string"
+			},
+			{
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"name": "",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "index",
+				"type": "uint256"
+			}
+		],
+		"name": "getMonsterByIndex",
+		"outputs": [
+			{
+				"name": "",
+				"type": "string"
+			},
+			{
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"name": "",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "getMonsterCount",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "getOwnerAddress",
+		"outputs": [
+			{
+				"name": "owner",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "__userAddress",
+				"type": "address"
+			}
+		],
+		"name": "getPlayerMaxHealth",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "_userAddress",
+				"type": "address"
+			}
+		],
+		"name": "getPlayerName",
+		"outputs": [
+			{
+				"name": "",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "__userAddress",
+				"type": "address"
+			}
+		],
+		"name": "getPlayerShia",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "getShiaPrice",
+		"outputs": [
+			{
+				"name": "_price",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "__userAddress",
+				"type": "address"
+			}
+		],
+		"name": "getTorsoArmorData",
+		"outputs": [
+			{
+				"name": "",
+				"type": "string"
+			},
+			{
+				"name": "",
+				"type": "string"
+			},
+			{
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"name": "",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "index",
+				"type": "uint256"
+			}
+		],
+		"name": "getWeaponByIndex",
+		"outputs": [
+			{
+				"name": "",
+				"type": "string"
+			},
+			{
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"name": "",
+				"type": "string"
+			},
+			{
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"name": "",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "getWeaponCount",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "players",
+		"outputs": [
+			{
+				"name": "Name",
+				"type": "string"
+			},
+			{
+				"name": "Health",
+				"type": "uint256"
+			},
+			{
+				"components": [
+					{
+						"name": "Name",
+						"type": "string"
+					},
+					{
+						"name": "ArmorType",
+						"type": "string"
+					},
+					{
+						"name": "Defense",
+						"type": "uint256"
+					},
+					{
+						"name": "image",
+						"type": "string"
+					}
+				],
+				"name": "Head",
+				"type": "tuple"
+			},
+			{
+				"components": [
+					{
+						"name": "Name",
+						"type": "string"
+					},
+					{
+						"name": "ArmorType",
+						"type": "string"
+					},
+					{
+						"name": "Defense",
+						"type": "uint256"
+					},
+					{
+						"name": "image",
+						"type": "string"
+					}
+				],
+				"name": "Arms",
+				"type": "tuple"
+			},
+			{
+				"components": [
+					{
+						"name": "Name",
+						"type": "string"
+					},
+					{
+						"name": "ArmorType",
+						"type": "string"
+					},
+					{
+						"name": "Defense",
+						"type": "uint256"
+					},
+					{
+						"name": "image",
+						"type": "string"
+					}
+				],
+				"name": "Torso",
+				"type": "tuple"
+			},
+			{
+				"components": [
+					{
+						"name": "Name",
+						"type": "string"
+					},
+					{
+						"name": "ArmorType",
+						"type": "string"
+					},
+					{
+						"name": "Defense",
+						"type": "uint256"
+					},
+					{
+						"name": "image",
+						"type": "string"
+					}
+				],
+				"name": "Leggings",
+				"type": "tuple"
+			},
+			{
+				"components": [
+					{
+						"name": "Name",
+						"type": "string"
+					},
+					{
+						"name": "ArmorType",
+						"type": "string"
+					},
+					{
+						"name": "Defense",
+						"type": "uint256"
+					},
+					{
+						"name": "image",
+						"type": "string"
+					}
+				],
+				"name": "Footwear",
+				"type": "tuple"
+			},
+			{
+				"components": [
+					{
+						"name": "Name",
+						"type": "string"
+					},
+					{
+						"name": "Damage",
+						"type": "uint256"
+					},
+					{
+						"name": "WeaponType",
+						"type": "string"
+					},
+					{
+						"name": "NumberOfAttacksOfTheWeapon",
+						"type": "uint256"
+					},
+					{
+						"name": "image",
+						"type": "string"
+					}
+				],
+				"name": "WeaponEquipped",
+				"type": "tuple"
+			},
+			{
+				"name": "Shia",
+				"type": "uint256"
+			},
+			{
+				"name": "image",
+				"type": "string"
+			},
+			{
+				"name": "exists",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	}
+]

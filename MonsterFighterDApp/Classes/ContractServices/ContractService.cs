@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace MonsterFighterDApp.Classes.ContractServices
 {
-    class ContractService
+    public class ContractService
     {
         private readonly Web3 web3;
         private readonly Contract contract;
@@ -23,6 +23,14 @@ namespace MonsterFighterDApp.Classes.ContractServices
             account = new Account(privateKey);
             web3 = new Web3(account, provider);
             contract = web3.Eth.GetContract(abi, contractAddress);
+        }
+
+        public string getOwnerAddress()
+        {
+            var getOwnerAddressFunction = contract.GetFunction("getOwnerAddress");
+            var task = getOwnerAddressFunction.CallAsync<string>();
+            var monster = task.Result;
+            return monster;
         }
 
         #region Monster Functions
@@ -74,6 +82,8 @@ namespace MonsterFighterDApp.Classes.ContractServices
             return txHash;
         }
 
+        #region Player Functions
+
         public string playerCreate(string name)
         {
             var addPlayerFunction = contract.GetFunction("playerCreate");
@@ -83,6 +93,31 @@ namespace MonsterFighterDApp.Classes.ContractServices
                 .GetResult();
             return txHash;
         }
+
+        public string getPlayerName(string address)
+        {
+            var getNameFunction = contract.GetFunction("getPlayerName");
+            var task = getNameFunction.CallAsync<string>(address);
+            var name = task.Result;
+            return name;
+        }
+
+        public string getAddressOfPlayer()
+        {
+            var getAddressFunction = contract.GetFunction("getAddressOfPlayer");
+            var task = getAddressFunction.CallAsync<string>();
+            var name = task.Result;
+            return name;
+        }
+
+        public bool checkIfPlayerAlreadyExists()
+        {
+            var getFunction = contract.GetFunction("checkIfPlayerAlreadyExists");
+            var task = getFunction.CallAsync<string>();
+            var status = task.Result;
+            return bool.Parse(status);
+        }
+        #endregion
 
         public string sellShia(uint amount)
         {
@@ -148,7 +183,6 @@ namespace MonsterFighterDApp.Classes.ContractServices
         #endregion
 
         #region Get Armor Data Functions
-
         public string getHeadArmorData(string address)
         {
             var getArmorFunction = contract.GetFunction("getHeadArmorData");
@@ -188,9 +222,21 @@ namespace MonsterFighterDApp.Classes.ContractServices
             var armorData = task.Result;
             return armorData;
         }
-
-
         #endregion
+
+
+        #region Add Weapon Function
+        public string addWeapon(string name, uint damage, string weaponType, uint numberOfAttacksOfTheWeapon, string imageUrl)
+        {
+            var addMonsterFunction = contract.GetFunction("addMonster");
+            var txHash = addMonsterFunction.SendTransactionAsync(account.Address, Gas, new HexBigInteger(0), name, damage, weaponType, numberOfAttacksOfTheWeapon, imageUrl)
+                .ConfigureAwait(false)
+                .GetAwaiter()
+                .GetResult();
+            return txHash;
+        }
+        #endregion
+
 
 
     }

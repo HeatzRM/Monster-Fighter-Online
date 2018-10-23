@@ -112,9 +112,9 @@
             this.materialLabel1.Location = new System.Drawing.Point(20, 86);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(130, 19);
+            this.materialLabel1.Size = new System.Drawing.Size(113, 19);
             this.materialLabel1.TabIndex = 3;
-            this.materialLabel1.Text = "Contract Address:";
+            this.materialLabel1.Text = "Player Address:";
             // 
             // PlayerMenu
             // 

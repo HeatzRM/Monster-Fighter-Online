@@ -1,4 +1,5 @@
 ﻿using MaterialSkin.Controls;
+using MonsterFighterDApp.Classes;
 using MonsterFighterDApp.Classes.ContractServices;
 using System;
 using System.Collections.Generic;
@@ -26,8 +27,26 @@ namespace MonsterFighterDApp
 
         private void BtnCreateMonster_Click(object sender, EventArgs e)
         {
-            //Insert Data into Contract
-            ContractService contractService = new ContractService();
+            try
+            {
+                ContractService contractService = new ContractService(LoginHandler.provider,
+                                                                    LoginHandler.contractAddress,
+                                                                    LoginHandler.abi,
+                                                                    LoginHandler.privateKey);
+
+
+                contractService.addMonster(TxtName.Text,
+                                           uint.Parse(TxtHealth.Text),
+                                           uint.Parse(TxtDamagePerTurn.Text),
+                                           uint.Parse(TxtAttackPerTurn.Text),
+                                           "None");
+
+                MessageBox.Show("Added New Monster", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex}" , "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
         }
     }

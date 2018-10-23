@@ -46,24 +46,38 @@ namespace MonsterFighterDApp.Forms
 
         private void BtnPlay_Click(object sender, EventArgs e)
         {
-            //Try to connect
             try
             {
-                LoginHandler.contractAddress = txtContractAddress.Text;
+                //LoginHandler.contractAddress = txtContractAddress.Text;
+                LoginHandler.contractAddress = "0x90faea2c477f9294997a25d5d7b701a20fb1ab9e";
                 LoginHandler.privateKey = txtPrivateKey.Text;
                 
                 ContractService contractService = new ContractService(LoginHandler.provider,
                                                                       LoginHandler.contractAddress,
                                                                       LoginHandler.abi,
                                                                       LoginHandler.privateKey);
+                if (contractService.checkIfPlayerAlreadyExists())
+                {
+                    //check if address is owner
+                    string playerAddress = contractService.getAddressOfPlayer();
+                    if (contractService.getOwnerAddress() == playerAddress)
+                    {
+                        AdminMenu adminMenu = new AdminMenu();
+                        adminMenu.Show();
+                    }
+                    else
+                    {
+                        PlayerMenu playerMenu = new PlayerMenu();
+                        playerMenu.PlayerAddress = playerAddress;
+                        playerMenu.Show();
+                    }
+
+                }
+                else
+                {
+                    contractService.playerCreate(txtUsername.Text);
+                }
                 Hide();
-
-                AdminMenu adminMenu = new AdminMenu();
-                adminMenu.Show();
-
-                //PlayerMenu playerMenu = new PlayerMenu();
-                //playerMenu.Show();
-
             }
             catch (Exception ex)
             {

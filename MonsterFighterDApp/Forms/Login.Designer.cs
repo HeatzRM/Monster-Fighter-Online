@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
-            this.txtContractAddress = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.txtUsername = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.txtPrivateKey = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -50,24 +50,24 @@
             this.materialLabel1.Location = new System.Drawing.Point(208, 476);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(130, 19);
+            this.materialLabel1.Size = new System.Drawing.Size(81, 19);
             this.materialLabel1.TabIndex = 0;
-            this.materialLabel1.Text = "Contract Address:";
+            this.materialLabel1.Text = "Username:";
             // 
-            // txtContractAddress
+            // txtUsername
             // 
-            this.txtContractAddress.Depth = 0;
-            this.txtContractAddress.Hint = "";
-            this.txtContractAddress.Location = new System.Drawing.Point(348, 475);
-            this.txtContractAddress.MouseState = MaterialSkin.MouseState.HOVER;
-            this.txtContractAddress.Name = "txtContractAddress";
-            this.txtContractAddress.PasswordChar = '\0';
-            this.txtContractAddress.SelectedText = "";
-            this.txtContractAddress.SelectionLength = 0;
-            this.txtContractAddress.SelectionStart = 0;
-            this.txtContractAddress.Size = new System.Drawing.Size(386, 23);
-            this.txtContractAddress.TabIndex = 2;
-            this.txtContractAddress.UseSystemPasswordChar = false;
+            this.txtUsername.Depth = 0;
+            this.txtUsername.Hint = "";
+            this.txtUsername.Location = new System.Drawing.Point(348, 475);
+            this.txtUsername.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.PasswordChar = '\0';
+            this.txtUsername.SelectedText = "";
+            this.txtUsername.SelectionLength = 0;
+            this.txtUsername.SelectionStart = 0;
+            this.txtUsername.Size = new System.Drawing.Size(386, 23);
+            this.txtUsername.TabIndex = 2;
+            this.txtUsername.UseSystemPasswordChar = false;
             // 
             // txtPrivateKey
             // 
@@ -150,7 +150,7 @@
             this.Controls.Add(this.lblLogo);
             this.Controls.Add(this.txtPrivateKey);
             this.Controls.Add(this.materialLabel2);
-            this.Controls.Add(this.txtContractAddress);
+            this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.materialLabel1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
@@ -165,7 +165,7 @@
         #endregion
 
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
-        private MaterialSkin.Controls.MaterialSingleLineTextField txtContractAddress;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtUsername;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtPrivateKey;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private System.Windows.Forms.PictureBox pictureBox1;

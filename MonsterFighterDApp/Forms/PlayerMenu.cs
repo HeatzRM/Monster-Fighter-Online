@@ -14,6 +14,8 @@ namespace MonsterFighterDApp.Forms
 {
     public partial class PlayerMenu : MaterialForm
     {
+        public string PlayerAddress { set; get; }
+
         public PlayerMenu()
         {
             InitializeComponent();
@@ -45,7 +47,7 @@ namespace MonsterFighterDApp.Forms
 
         private void PlayerMenu_Load(object sender, EventArgs e)
         {
-            LblAddress.Text = LoginHandler.contractAddress;
+            LblAddress.Text = PlayerAddress;
         }
     }
 }

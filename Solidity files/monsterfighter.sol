@@ -17,11 +17,15 @@ contract MonsterFighterGame
     
     address private contractOwner = msg.sender;
     
-    uint priceOfTokens = 0.001 ether;
+    uint priceOfTokens = 0.0001 ether;
     mapping (address => Player) public players;
     
     mapping (uint256 => Monster) monsters;
     Monster[] monsterArr;
+    
+    mapping (string => Weapon) weapons;
+    Weapon[] weaponsArr;
+    
     
     
     struct Weapon
@@ -48,7 +52,7 @@ contract MonsterFighterGame
         string Name;
         uint256 Health;
         uint256 DamagePerAttack;
-        uint256 DamagePerTurn;
+        uint256 AttacksPerTurn;
         
         string image; //For image url display
     }
@@ -70,9 +74,9 @@ contract MonsterFighterGame
     }
     
     ///Monster Functions
-    function addMonster (string Name, uint256 Health, uint256 DamagePerAttack, uint256 DamagePerTurn, string image) public
+    function addMonster (string Name, uint256 Health, uint256 DamagePerAttack, uint256 AttacksPerTurn, string image) public
     {
-        monsterArr.push(Monster({Name:Name, Health:Health, DamagePerAttack:DamagePerAttack, DamagePerTurn:DamagePerTurn, image:image}));
+        monsterArr.push(Monster({Name:Name, Health:Health, DamagePerAttack:DamagePerAttack, AttacksPerTurn:AttacksPerTurn, image:image}));
     } 
     
     function getMonsterCount() public view returns(uint256)
@@ -85,7 +89,7 @@ contract MonsterFighterGame
         return(monsterArr[index].Name, 
                monsterArr[index].Health,
                monsterArr[index].DamagePerAttack, 
-               monsterArr[index].DamagePerTurn, 
+               monsterArr[index].AttacksPerTurn, 
                monsterArr[index].image);
     }
     
@@ -99,6 +103,7 @@ contract MonsterFighterGame
     //This is where the player enters if doesnt already exists
     function playerCreate(string Name) public
     {
+        require(players[msg.sender].exists == false);
         players[msg.sender].Name = Name;
         players[msg.sender].Health = 100;
         players[msg.sender].Head = Armor("None","None",0, "url");
@@ -126,7 +131,7 @@ contract MonsterFighterGame
         return(players[__userAddress].Shia);
     }
     
-    //Get player armor
+    
     function getHeadArmorData(address __userAddress) public view returns(string, string, uint256, string)
     {
         return(players[__userAddress].Head.Name,
@@ -209,8 +214,27 @@ contract MonsterFighterGame
          players[__userAddress].Footwear.image = image;
     }
     
+    //Weapon Functions
+    function addWeapon (string Name, uint256 Damage, string WeaponType, uint256 NumberOfAttacksOfTheWeapon, string image) public
+    {
+        weaponsArr.push(Weapon({Name:Name, Damage:Damage, WeaponType:WeaponType, NumberOfAttacksOfTheWeapon:NumberOfAttacksOfTheWeapon, image:image}));
+    } 
+
+    function getWeaponCount() public view returns(uint256)
+    {
+        return weaponsArr.length;
+    }
     
+    function getWeaponByIndex(uint256 index) public view returns(string, uint256, string, uint256, string)
+    {
+        return(weaponsArr[index].Name, 
+               weaponsArr[index].Damage, 
+               weaponsArr[index].WeaponType, 
+               weaponsArr[index].NumberOfAttacksOfTheWeapon, 
+               weaponsArr[index].image);
+    }
     
+ 
     
     //Initial token of the contractOwner address
     constructor (uint256 initialOwnerTokens) public 
@@ -254,13 +278,11 @@ contract MonsterFighterGame
     }
     
     //For Transfering of Shia to Another Player
-    function transfer(address to, uint256 value) public 
+    function transfer(address _to, uint256 _value) public 
     {
-        if ((players[msg.sender].Shia >= value) && (players[to].Shia + value >= players[to].Shia)) 
-        {
-            players[msg.sender].Shia -= value; // Subtract the value from the sender
-            players[to].Shia += value; // Add the same value to the recipient
-        }
+        require(players[msg.sender].Shia >= _value);
+        require(players[_to].Shia + _value >= _value);
+        players[msg.sender].Shia -= _value;
     }
 
     function getOwnerAddress() public view returns(address owner)
