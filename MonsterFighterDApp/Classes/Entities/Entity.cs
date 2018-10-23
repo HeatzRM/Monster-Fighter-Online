@@ -11,7 +11,7 @@ namespace MonsterFighterDApp
         public string Name { set; get; }
         public long Health { set; get; }
         public long DamagePerAttack { set; get; }
-        public uint AttackPerTurn { set; get; }
+        public uint AttacksPerTurn { set; get; }
         public ulong Experience { set; get; }
 
         public void AddExperience(ulong ExperienceGained)
@@ -26,7 +26,7 @@ namespace MonsterFighterDApp
 
         public void Attack(Entity entity)
         {
-            for (int i = 0; i < AttackPerTurn; i++)
+            for (int i = 0; i < AttacksPerTurn; i++)
             {
                 BasicAttack(entity);
             }

@@ -1,4 +1,5 @@
 ﻿using MaterialSkin.Controls;
+using MonsterFighterDApp.Classes.ContractServices;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -26,6 +27,8 @@ namespace MonsterFighterDApp
         private void BtnCreateMonster_Click(object sender, EventArgs e)
         {
             //Insert Data into Contract
+            ContractService contractService = new ContractService();
+
         }
     }
 }

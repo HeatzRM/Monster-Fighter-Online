@@ -58,11 +58,11 @@ namespace MonsterFighterDApp.Forms
                                                                       LoginHandler.privateKey);
                 Hide();
 
-                //AdminMenu adminMenu = new AdminMenu();
-                //adminMenu.Show();
+                AdminMenu adminMenu = new AdminMenu();
+                adminMenu.Show();
 
-                PlayerMenu playerMenu = new PlayerMenu();
-                playerMenu.Show();
+                //PlayerMenu playerMenu = new PlayerMenu();
+                //playerMenu.Show();
 
             }
             catch (Exception ex)

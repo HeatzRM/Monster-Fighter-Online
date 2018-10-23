@@ -15,12 +15,12 @@ namespace MonsterFighterDApp.Classes
 
        }
 
-       public Monster(string Name, long Health, List<Dictionary<Element, int>> ElementalAttribute, uint AttackPerTurn, long DamagePerAttack)
+       public Monster(string Name, long Health, List<Dictionary<Element, int>> ElementalAttribute, uint AttacksPerTurn, long DamagePerAttack)
        {
             this.Name = Name;
             this.Health = Health;
             this.ElementalAttribute = ElementalAttribute;
-            this.AttackPerTurn = AttackPerTurn;
+            this.AttacksPerTurn = AttacksPerTurn;
             this.DamagePerAttack = DamagePerAttack;
        }
     }

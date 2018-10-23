@@ -29,5 +29,11 @@ namespace MonsterFighterDApp.Forms
             AddNewItem addNewWeapon = new AddNewItem();
             addNewWeapon.Show();
         }
+
+        private void BtnAddArmor_Click(object sender, EventArgs e)
+        {
+            AddNewArmor addNewArmor = new AddNewArmor();
+            addNewArmor.Show();
+        }
     }
 }

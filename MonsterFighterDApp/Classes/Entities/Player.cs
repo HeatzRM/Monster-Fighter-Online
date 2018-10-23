@@ -29,7 +29,7 @@ namespace MonsterFighterDApp.Classes
         public void calculateDamage()
         {
             this.DamagePerAttack = weaponEquipped.Damage;
-            this.AttackPerTurn = weaponEquipped.NumberOfAttacksOfTheWeapon;
+            this.AttacksPerTurn = weaponEquipped.NumberOfAttacksOfTheWeapon;
         }
         
     }

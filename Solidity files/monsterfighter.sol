@@ -159,13 +159,57 @@ contract MonsterFighterGame
                players[__userAddress].Leggings.image);
     }
     
-    function geFootwearArmorData(address __userAddress) public view returns(string, string, uint256, string)
+    function getFootwearArmorData(address __userAddress) public view returns(string, string, uint256, string)
     {
         return(players[__userAddress].Footwear.Name,
                players[__userAddress].Footwear.ArmorType,
                players[__userAddress].Footwear.Defense,
                players[__userAddress].Footwear.image);
     }
+    
+    
+    //Set Player Armor
+    function setHeadArmor(address __userAddress, string Name, string ArmorType, uint256 Defense, string image) public
+    {
+         players[__userAddress].Head.Name = Name;
+         players[__userAddress].Head.ArmorType = ArmorType;
+         players[__userAddress].Head.Defense = Defense;
+         players[__userAddress].Head.image = image;
+    }
+    
+    function setArmsArmor(address __userAddress, string Name, string ArmorType, uint256 Defense, string image) public
+    {
+         players[__userAddress].Arms.Name = Name;
+         players[__userAddress].Arms.ArmorType = ArmorType;
+         players[__userAddress].Arms.Defense = Defense;
+         players[__userAddress].Arms.image = image;
+    }
+    
+    function setTorsoArmor(address __userAddress, string Name, string ArmorType, uint256 Defense, string image) public
+    {
+         players[__userAddress].Torso.Name = Name;
+         players[__userAddress].Torso.ArmorType = ArmorType;
+         players[__userAddress].Torso.Defense = Defense;
+         players[__userAddress].Torso.image = image;
+    }
+    
+    function setLeggingsArmor(address __userAddress, string Name, string ArmorType, uint256 Defense, string image) public
+    {
+         players[__userAddress].Leggings.Name = Name;
+         players[__userAddress].Leggings.ArmorType = ArmorType;
+         players[__userAddress].Leggings.Defense = Defense;
+         players[__userAddress].Leggings.image = image;
+    }
+    
+     function setFootwearArmor(address __userAddress, string Name, string ArmorType, uint256 Defense, string image) public
+    {
+         players[__userAddress].Footwear.Name = Name;
+         players[__userAddress].Footwear.ArmorType = ArmorType;
+         players[__userAddress].Footwear.Defense = Defense;
+         players[__userAddress].Footwear.image = image;
+    }
+    
+    
     
     
     //Initial token of the contractOwner address
@@ -187,11 +231,20 @@ contract MonsterFighterGame
         priceOfTokens = _newPrice;
     }
     
-    function buyShia(uint _numTokens) public payable inlimits {
+    function buyShia(uint _numTokens) public payable 
+    {
         require(msg.value >= _numTokens * priceOfTokens);
         contractOwner.transfer(msg.value);
         players[msg.sender].Shia += _numTokens;
-   
+    }
+    
+    function sellShia(uint __numTokens) public payable 
+    {
+        require(__numTokens > 0, "Input some amount to sell");
+        require(players[msg.sender].Shia > 0, "You have no Shia left to sell");
+        uint256 moneyToTransfer = __numTokens * priceOfTokens;
+        msg.sender.transfer(moneyToTransfer);
+
     }
     
     modifier inlimits() {
@@ -215,7 +268,7 @@ contract MonsterFighterGame
         owner = contractOwner;
     }
     
-    function getContractBalance() public view returns(uint balance)
+    function getContractBalance() onlyOwner public view returns(uint balance)
     {
         balance = address(this).balance;
     }

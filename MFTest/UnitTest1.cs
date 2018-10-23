@@ -85,7 +85,7 @@ namespace MFTest
             slime.Name = "Mr. Slimy";
             slime.Health = 50;
             slime.DamagePerAttack = 2;
-            slime.AttackPerTurn = 1;
+            slime.AttacksPerTurn = 1;
 
             while (!(player1.Health <= 0) && !(slime.Health <= 0))
             {
