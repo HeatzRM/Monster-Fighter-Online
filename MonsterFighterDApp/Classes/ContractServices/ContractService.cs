@@ -110,12 +110,18 @@ namespace MonsterFighterDApp.Classes.ContractServices
             return name;
         }
 
-        public bool checkIfPlayerAlreadyExists()
+        public string checkIfPlayerAlreadyExists()
         {
+            /*
             var getFunction = contract.GetFunction("checkIfPlayerAlreadyExists");
-            var task = getFunction.CallAsync<string>();
+            var task = getFunction.CallAsync<bool>();
             var status = task.Result;
-            return bool.Parse(status);
+            return status; */
+
+            var getFactFunction = contract.GetFunction("checkIfPlayerAlreadyExists");
+            var task = getFactFunction.CallAsync<string>();
+            var fact = task.Result;
+            return fact;
         }
         #endregion
 

@@ -49,14 +49,18 @@ namespace MonsterFighterDApp.Forms
             try
             {
                 //LoginHandler.contractAddress = txtContractAddress.Text;
-                LoginHandler.contractAddress = "0x90faea2c477f9294997a25d5d7b701a20fb1ab9e";
+                LoginHandler.contractAddress = "0x1142aab02581ee377fb8f92610d7c64165f5acaa";
                 LoginHandler.privateKey = txtPrivateKey.Text;
                 
                 ContractService contractService = new ContractService(LoginHandler.provider,
                                                                       LoginHandler.contractAddress,
                                                                       LoginHandler.abi,
                                                                       LoginHandler.privateKey);
-                if (contractService.checkIfPlayerAlreadyExists())
+                Console.WriteLine("test" + contractService.addMonster("mon1",100,20,2,"None"));
+                //0xFB1B73E1DE8CA2E4B0C80382CF521DEC775B5E317EAC39BA154C3984DD8CB778
+                /*
+                var state = contractService.checkIfPlayerAlreadyExists();
+                if (true)
                 {
                     //check if address is owner
                     string playerAddress = contractService.getAddressOfPlayer();
@@ -78,6 +82,7 @@ namespace MonsterFighterDApp.Forms
                     contractService.playerCreate(txtUsername.Text);
                 }
                 Hide();
+                */
             }
             catch (Exception ex)
             {
